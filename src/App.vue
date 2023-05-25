@@ -4,6 +4,7 @@
   import AppFooter from './components/AppFooter.vue'
   export default{
     name: 'app',
+
     components: {
       AppHeader,
       AppMain,
@@ -15,5 +16,5 @@
 <template>
   <AppHeader/>
   <AppMain/>
-  
+  <AppFooter/>
 </template>
