@@ -32,6 +32,12 @@ export default {
     },
     created() {
         this.getProject();
+        this.$watch(
+            () => this.$route.params,
+            (toParams, previousParams) => {
+                this.getProject();
+            }
+        )
     }
 }
 </script>
@@ -41,8 +47,13 @@ export default {
     <section v-if="project">
         <div class="card container w-75 my-5 p-3">
             <h5 class="card-title">{{ project.name }}</h5>
-                <p class="card-text">{{ project.description }}</p>
+            <h6>Tecnologia: {{ project.type.slug }}</h6>
+            <p class="card-text">{{ project.description }}</p>
+            <div v-show="project.technologies">
+                <span class="badge text-bg-warning" v-for="technology in project.technologies">{{ technology.name }}</span>
+            </div>
             <img :src="project.image" class="card-img-top img-fluid" alt="...">
+
         </div>
     </section>
     <section v-if="isError">

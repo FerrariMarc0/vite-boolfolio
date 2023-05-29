@@ -21,8 +21,6 @@ import ProjectCard from '../components/ProjectCard.vue';
         methods: {
             getProjects() {
 
-
-
                 axios.get(this.apiBaseUrl + this.apiUrls.projects, {
                     params: {
                         page: this.currentPage
@@ -35,9 +33,9 @@ import ProjectCard from '../components/ProjectCard.vue';
                     if(!moreProjects)
                         this.showButton = false;
 
-            }).catch((error) => {
-            console.log(error);
-            })
+                }).catch((error) => {
+                console.log(error);
+                })
         },
         nextPage(){
             this.currentPage += 1;

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory  } from 'vue-router';
 import AppHome from './pages/AppHome.vue';
 import PortfolioPage from './pages/PortfolioPage.vue';
 import ProjectPage from './pages/ProjectPage.vue';
+import TypePage from './pages/TypePage.vue';
 import NotFoundPage from './pages/NotFoundPage.vue';
 
 const router = createRouter ({
@@ -23,6 +24,11 @@ const router = createRouter ({
             path: '/project/:slug',
             name: 'project',
             component: ProjectPage
+        },
+        {
+            path: '/types/:slug',
+            name: 'type',
+            component: TypePage
         },
         {
             path: '/:pathMatch(.*)*',
