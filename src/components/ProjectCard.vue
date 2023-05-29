@@ -18,7 +18,7 @@
         <div class="card-body">
             <h5 class="card-title">{{ project.name }}</h5>
             <p class="card-text" v-if="project.description" >{{ project.description.substring(0, 150) }}</p>
-            <router-link :to="{ name: 'project', params: { id: project.id, slug: project.slug } }" class="btn btn-primary">
+            <router-link :to="{ name: 'project', params: { slug: project.slug } }" class="btn btn-primary">
                 Dettagli
             </router-link>
         </div>

@@ -16,11 +16,15 @@ export default {
     },
     methods: {
         getProject(){
-            axios.get(this.apiBaseUrl + this.apiUrls.projects + "/" + this.$route.params.id)
+            axios.get(this.apiBaseUrl + this.apiUrls.projects + "/" + this.$route.params.slug)
             .then((response) => {
                 this.project = response.data.results;
             })
             .catch((error) => {
+                if(error.response.status === 404) {
+                    this.$router.push({ name: 'not-found' });
+                }
+
                 this.isError = true;
                 this.errorMessage  = error.message;
             })
