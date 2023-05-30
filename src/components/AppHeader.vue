@@ -2,14 +2,15 @@
 import TypeList from './TypeList.vue';
 
     export default {
-        name: 'Header',
-        components: {TypeList}
-    }
+    name: "Header",
+    components: "TypeList",
+    components: { TypeList }
+}
 </script>
 
 <template>
     <header>
-        <div class="container">
+        <div class="container py-2">
             <div class="d-flex justify-content-between">
                 <div class="logo">Logo</div>
                 <nav>
@@ -25,7 +26,12 @@ import TypeList from './TypeList.vue';
                             </router-link>
                         </li>
                         <li>
-                            <TypeListVue/>
+                            <TypeList/>
+                        </li>
+                        <li class="ms-5">
+                            <router-link :to="{ name: 'sign-up' }" class="nav-link">
+                                Registrati!
+                            </router-link>
                         </li>
                     </ul>
                 </nav>

@@ -3,6 +3,7 @@ import AppHome from './pages/AppHome.vue';
 import PortfolioPage from './pages/PortfolioPage.vue';
 import ProjectPage from './pages/ProjectPage.vue';
 import TypePage from './pages/TypePage.vue';
+import SignUpPage from './pages/SignUpPage.vue';
 import NotFoundPage from './pages/NotFoundPage.vue';
 
 const router = createRouter ({
@@ -29,6 +30,11 @@ const router = createRouter ({
             path: '/types/:slug',
             name: 'type',
             component: TypePage
+        },
+        {
+            path: '/sign-up',
+            name: 'sign-up',
+            component: SignUpPage
         },
         {
             path: '/:pathMatch(.*)*',
